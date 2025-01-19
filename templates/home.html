@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Transport Vergelijker</title>
+    <!-- Geeft de titel van de website weer in de browser-tab -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Link naar mijn css bestand voor de opmaak van de pagina -->
+</head>
+<body>
+    <!-- Navigatiebalk -->
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website en over mezelf etc. -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hoofdpagina -->
+    <div class="landing-page">
+        <h1>Welkom bij de Transporteur Vergelijker</h1>
+        <!-- Hoofdtitel van de pagina -->
+        <p>Deze website helpt je de beste vervoerder te kiezen op basis van jouw transportbehoeften. Vul onderstaande vragen in en ontvang een advies voor de meest geschikte vervoerder!</p>
+        <!-- Uitleg over de functionaliteit van mijn website -->
+        <p><strong>Let op:</strong> Het resultaat is een advies, maar de uiteindelijke keuze is altijd aan jou.</p>
+        <!-- Waarschuwing dat het advies die mijn website geeft niet bindend is -->
+        <a href="{{ url_for('vragen') }}" class="action-btn">Start de Vergelijking</a>
+        <!-- Knop om de transporteursvergelijking te starten -->
+    </div>
+
+    <!-- Grid Layout voor Bedrijfslogo's -->
+    <div class="grid-container">
+        <!-- Elke 'grid-item' is een vakje met een bedrijfslogo en naam -->
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/DHL.jpg') }}" alt="Bedrijf 1">
+            <!-- Logo van DHL -->
+            <p>DHL</p>
+            <!-- Naam van het bedrijf -->
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/POSTNL.jpg') }}" alt="Bedrijf 2">
+            <!-- Logo van PostNL -->
+            <p>POSTNL</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/DPD.jpg') }}" alt="Bedrijf 3">
+            <!-- Logo van DPD -->
+            <p>DPD</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/GLS.jpg') }}" alt="Bedrijf 4">
+            <!-- Logo van GLS -->
+            <p>GLS</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/UPS.jpg') }}" alt="Bedrijf 5">
+            <!-- Logo van UPS -->
+            <p>UPS</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/Fedex.jpg') }}" alt="Bedrijf 6">
+            <!-- Logo van FedEx -->
+            <p>FedEx</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/DB.jpg') }}" alt="Bedrijf 7">
+            <!-- Logo van Schenker -->
+            <p>Schenker</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/KN.jpg') }}" alt="Bedrijf 8">
+            <!-- Logo van Kuehne + Nagel -->
+            <p>Kuehne + Nagel</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/RHENUS.jpg') }}" alt="Bedrijf 9">
+            <!-- Logo van Rhenus -->
+            <p>Rhenus</p>
+        </div>
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='Pictures/BAKKER.jpg') }}" alt="Bedrijf 10">
+            <!-- Logo van Bakker Groep -->
+            <p>Bakker Groep</p>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p>
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>

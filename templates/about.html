@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="nl"> 
+<head>
+    <title>Contact</title>
+    <!-- Titel van de pagina die in de browser wordt weergegeven -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+     <!-- Link naar mijn css bestand voor de opmaak van de pagina  -->
+</head>
+     
+    <style>
+        /* Start van de interne stijlen */
+        body {
+            font-family: Arial, sans-serif; 
+            /* Instellen van het lettertype */
+            margin: 0; 
+            /* Verwijderen van standaardmarges */
+            padding: 0; 
+            /* Verwijderen van standaardopvulling */
+            background-color: #f4f4f4; 
+            /* Achtergrondkleur instellen */
+        }
+        .container {
+            max-width: 1200px; 
+            /* Maximale breedte van de container */
+            margin: 50px auto; 
+            /* Horizontaal centreren en verticale marge toevoegen */
+            padding: 20px; 
+            /* Binnenruimte toevoegen */
+            background-color: white; 
+            /* Achtergrondkleur van de container instellen */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            /* Toevoegen van een schaduw rondom de container */
+            border-radius: 8px; 
+            /* Ronde hoeken instellen */
+        }
+        h1, h2 {
+            color: #333; 
+            /* Tekstkleur voor koppen */
+        }
+        p {
+            font-size: 16px; 
+            /* Lettergrootte voor paragrafen */
+            line-height: 1.6; 
+            /* Regelhoogte voor leesbaarheid */
+            color: #555; 
+            /* Tekstkleur voor paragrafen */
+        }
+        /* Stijlen voor de lijst met technologieën */
+        .tech-list {
+            list-style-type: none; 
+            /* Verwijderen van standaard opsommingstekens */
+            padding-left: 0; 
+            /* Verwijderen van standaard padding aan de linkerkant */
+        }
+        .tech-list li {
+            display: flex; 
+            /* Lijstitems horizontaal uitlijnen */
+            align-items: center; 
+            /* Lijstitems verticaal uitlijnen */
+            margin-bottom: 10px; 
+            /* Ruimte onder elk lijstitem */
+        }
+        .tech-list li::before {
+            content: '•'; 
+            /* Toevoegen van een bolletje voor elk lijstitem */
+            color: rgb(0, 0, 0); 
+            /* Kleur van het bolletje */
+            font-size: 24px; 
+            /* Grootte van het bolletje */
+            margin-right: 10px; 
+            /* Ruimte tussen het bolletje en de tekst */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Container voor de inhoud -->
+        <h1>Over Mij</h1> 
+        <!-- Titel van de pagina -->
+        <p>Welkom op de 'Over Mij'-pagina van mijn Transport Vergelijker! Hier vertel ik je meer over de applicatie en mijn visie achter het project.</p> 
+        <!-- Inleidende tekst -->
+        
+        <h2>Wat is de Transport Vergelijker?</h2> 
+        <!-- Subtitel -->
+        <p>Deze website heb ik gebouwd tijdens mijn minor creatief programmeren van de NHL Stenden. Dit is een externe minor die ik volg voor mijn afstudeerjaar van de opleiding Logistics Engineering. Zelf zit ik op de Breda University of Applied Sciences in Breda.</p> 
+        <!-- Uitleg over het project -->
+
+        <h2>Waarom dit project?</h2> 
+        <!-- Subtitel -->
+        <p>Dit is mijn final project voor de minor creatief programmeren en wat ik heb gebouwd is een transporteursvergelijker. De website gaat een aantal vragen stellen aan je en vergelijkt de antwoorden van die vragen om zo de transporteur te kiezen die het beste daarop aansluit. Er zijn in de wereld tegenwoordig zoveel transporteurs dat het voor consumenten vaak lastig is welke nou de beste keuze is, terwijl er veel verschil is in prijzen en kwaliteit tussen deze transporteurs.</p> 
+        <!-- Reden voor het project -->
+
+        <h2>Technologieën en Tools</h2> 
+        <!-- Subtitel -->
+        <p>Deze applicatie is gebouwd met de volgende technologieën:</p> 
+        <!-- Inleidende tekst voor de lijst -->
+        <ul class="tech-list">
+            <!-- lijst met gebruikte technologieën -->
+            <li><strong>Flask</strong> - Een Python web framework voor het bouwen van de webapplicaties.</li> 
+            <!-- Flask uitleg -->
+            <li><strong>HTML/CSS</strong> - Voor de structuur en styling van de webpagina's.</li> 
+            <!-- HTML en CSS uitleg -->
+            <li><strong>JavaScript</strong> - Voor interactie, bijvoorbeeld knoppen </li> 
+            <!-- JavaScript uitleg -->
+            <li><strong>Python</strong> - Gebruikt voor de backend logica van de applicatie.</li> 
+            <!-- Python uitleg -->
+            <li><strong>SQLite3</strong> - Een simpele database voor het opslaan van gebruikersgegevens.</li> 
+            <!-- SQLite uitleg -->
+        </ul>
+
+        <h2>Contact</h2> 
+        <!-- Subtitel -->
+        <p>Heb je vragen? Neem gerust contact op via de <a href="{{ url_for('contact') }}">Contact</a>-pagina.</p> 
+        <!-- Contactinformatie -->
+    </div>
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p> 
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>
+

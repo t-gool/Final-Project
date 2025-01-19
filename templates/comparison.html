@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html lang="nl"> 
+<head>
+    <title>Vergelijking van Vervoerders</title> 
+    <!-- De titel van de pagina -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <!-- Link naar mijn css bestand voor de opmaak van de pagina -->
+    <style>
+        /* Interne stijlen voor de pagina */
+        body {
+            font-family: Arial, sans-serif; 
+            /* Het lettertype instellen */
+            margin: 0; 
+            /* Standaard marges op 0 zetten */
+            padding: 0; 
+            /* Standaard opvulling op 0 zetten */
+            background-color: #f4f4f4; 
+            /* Achtergrondkleur instellen */
+        }
+        .container {
+            max-width: 1200px; 
+            /* Maximale breedte van de container */
+            margin: 50px auto; 
+            /* Horizontaal centreren en verticale ruimte toevoegen */
+            padding: 20px; 
+            /* Dit voegt binnenruimte toe */
+            background-color: white; 
+            /* Achtergrondkleur van de container instellen */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            /* Een schaduw toevoegen aan de container */
+            border-radius: 8px; 
+            /* Ronde hoeken  */
+        }
+        h1 {
+            text-align: center; 
+            /* De tekst centreren */
+            color: #333; 
+            /* Kleur van de tekst */
+        }
+        .carrier-list {
+            display: flex; 
+            /* Flexbox gebruiken voor uitlijning */
+            flex-wrap: wrap; 
+            /* Lijstitems naar een nieuwe regel laten verplaatsen indien nodig */
+            justify-content: center; 
+            /* Items centreren */
+            gap: 30px; 
+            /* Ruimte tussen de items */
+        }
+        .carrier-item {
+            width: 200px; 
+            /* Breedte van elk vervoerder-item */
+            padding: 20px; 
+            /* Binnenruimte toevoegen */
+            text-align: center; 
+            /* Tekst in het midden uitlijnen */
+            background-color: #ffffff; 
+            /* Achtergrondkleur instellen */
+            border-radius: 8px; 
+            /* Ronde hoeken instellen */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            /* schaduw toevoegen */
+        }
+        .carrier-item img {
+            width: 150px; 
+            /* Breedte van de afbeelding */
+            height: auto; 
+            /* Hoogte word automatisch aangepast */
+            margin-bottom: 10px; 
+            /* Ruimte onder de afbeelding */
+        }
+        .carrier-item h3 {
+            font-size: 18px; 
+            /* Grootte van de tekst */
+            color: #333; 
+            /* Kleur van de tekst */
+        }
+        .btn {
+            display: block; 
+            /* Een blokweergave instellen */
+            margin: 20px auto; 
+            /* Ruimte toevoegen en centreren */
+            padding: 10px 20px; 
+            /* Binnenruimte instellen */
+            background-color: #4CAF50; 
+            /* Achtergrondkleur van de knop */
+            color: white; 
+            /* Tekstkleur */
+            border-radius: 5px; 
+            /* Ronde hoeken voor de knop */
+            text-decoration: none; 
+            /* Verwijderen van standaard onderstreping bij de letters */
+            text-align: center; 
+            /* Tekst centreren in de knop */
+        }
+        .btn:hover {
+            background-color: #45a049; 
+            /* Achtergrondkleur veranderd wanneer je erover hoverd met je muis */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+<div class="container">
+    <!-- Container voor de inhoud -->
+    <h1>De Beste Vervoerders op Basis van Jouw Keuzes</h1> 
+    <!-- Titel van de pagina -->
+    
+    <div class="carrier-list">
+        <!-- Lijst met beste vervoerders -->
+        {% for carrier in best_carriers %} 
+        <!-- Start van de for-loop die door de beste vervoerders itereren -->
+            <div class="carrier-item">
+                <!-- Een item voor een individuele vervoerder -->
+                <img src="{{ url_for('static', filename='Pictures/' + carrier + '.jpg') }}" alt="{{ carrier }} Logo"> 
+                <!-- Logo van de vervoerder laten zien -->
+                <h3>{{ carrier }}</h3> 
+                <!-- Naam van de vervoerder laten zien -->
+            </div>
+        {% endfor %} 
+        <!-- Einde van de for-loop -->
+    </div>
+
+    <a href="{{ url_for('home') }}" class="btn">Terug naar Home</a> 
+    <!-- Knop om terug te gaan naar de homepagina -->
+</div>
+
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p> 
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>

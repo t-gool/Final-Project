@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <title>Contact</title>
+    <!-- Titel van de pagina -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Link naar mijn css bestand voor de opmaak van de pagina -->
+</head>
+
+<body>
+    <!-- Navigatiebalk -->
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contactpagina -->
+    <div class="contact-page">
+        <!-- Container voor de inhoud van de contactpagina -->
+        <h1>Contacteer Ons</h1>
+        <!-- Titel van de contactpagina -->
+        <p>
+            Heeft u vragen of opmerkingen? Vul het onderstaande formulier in en we nemen zo snel mogelijk contact met u op!
+        </p>
+        <!-- Uitleg over het contactformulier -->
+
+        <!-- Contactformulier -->
+        <form action="{{ url_for('contact') }}" method="POST">
+            <!-- Formulier met actie en methode POST -->
+            <label for="name">Naam:</label>
+            <!-- Label voor het naamveld -->
+            <input type="text" id="name" name="name" required>
+            <!-- Invoerveld voor naam, verplicht in te vullen -->
+
+            <label for="email">E-mail:</label>
+            <!-- Label voor het e-mailveld -->
+            <input type="email" id="email" name="email" required>
+            <!-- Invoerveld voor e-mail, verplicht in te vullen -->
+
+            <label for="message">Bericht:</label>
+            <!-- Label voor het berichtveld -->
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <!-- Tekstveld voor bericht, verplicht in te vullen -->
+
+            <button type="submit">Verstuur</button>
+            <!-- Knop om het formulier te versturen -->
+        </form>
+    </div>
+
+    <!-- Bedanktbericht (optioneel wanneer de gebruiker een bericht verstuurd) -->
+    {% if message %}
+    <!-- Controle of er een bericht is verstuurd -->
+    <div class="thank-you-message">
+        <!-- Container voor het bedanktbericht -->
+        <p>Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.</p>
+        <!-- het Bericht dat wordt weergegeven na het verzenden -->
+    </div>
+    {% endif %}
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p>
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>

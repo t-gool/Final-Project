@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Account Aanmaken - Transport Vergelijker</title>
+    <!-- Titel van de pagina -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Link naar mijn css bestand voor de opmaak van de pagina  -->
+</head>
+<body>
+    <!-- Navigatiebalk -->
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Account Aanmaken -->
+    <div class="contact-page">
+        <!-- Container voor de inhoud van de account-aanmaken-pagina -->
+        <h1>Account Aanmaken</h1>
+        <!-- Titel van de pagina -->
+        <form action="{{ url_for('signup') }}" method="post">
+            <!-- Formulier voor het aanmaken van een account -->
+            <label for="username">Gebruikersnaam:</label>
+            <!-- Label voor het invoeren van een gebruikersnaam -->
+            <input type="text" id="username" name="username" required>
+            <!-- Inputveld voor de gebruikersnaam, verplicht in te vullen -->
+            <label for="password">Wachtwoord:</label>
+            <!-- Label voor het invoeren van een wachtwoord -->
+            <input type="password" id="password" name="password" required>
+            <!-- Inputveld voor het wachtwoord, moet verplicht ingevuld worden -->
+            
+            <button type="submit">Account Aanmaken</button>
+            <!-- Knop om het formulier te verzenden -->
+        </form>
+        <p>Heb je al een account? <a href="{{ url_for('inloggen') }}">Inloggen</a></p>
+        <!-- Link naar de inlogpagina als de gebruiker al een account heeft -->
+    </div>
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p>
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>

@@ -1,0 +1,431 @@
+body, html {
+    margin: 0; 
+    /* Verwijdert standaard marges van de pagina */
+    padding: 0; 
+    /* Verwijdert standaard opvulling van de pagina */
+    font-family: Arial, sans-serif; 
+    /* Stelt het lettertype in voor de hele pagina */
+    background-color: #f4f4f4; 
+    /* Achtergrondkleur van de pagina */
+    color: #333; 
+    /* Tekstkleur voor de hele pagina */
+}
+
+/* Navigatie */
+nav {
+    background-color: #003366; 
+    /* Achtergrondkleur van de navigatiebalk */
+    padding: 10px 20px; 
+    /* Binnenruimte van de navigatiebalk */
+}
+
+nav ul {
+    list-style: none; 
+    /* Verwijdert standaard opsommingstekens */
+    padding: 0; 
+    /* Verwijdert standaard opvulling van de lijst */
+    margin: 0; 
+    /* Verwijdert standaard marges van de lijst */
+    text-align: center; 
+    /* Centreerd de inhoud van de lijst */
+}
+
+nav ul li {
+    display: inline; 
+    /* Plaatst de lijstitems naast elkaar */
+    margin: 0 15px; 
+    /* Ruimte tussen de lijstitems */
+}
+
+nav ul li a {
+    color: white; 
+    /* Tekstkleur van de links */
+    text-decoration: none; 
+    /* Verwijdert onderstreping van links */
+    font-size: 18px; 
+    /* Lettergrootte van de links */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; 
+    /* Onderstreept de link wanneer de muis hovert over links */
+}
+
+/* Landing pagina */
+.landing-page {
+    text-align: center; 
+    /* Centreert de tekst op de pagina */
+    padding: 50px; 
+    /* Binnenruimte rondom de inhoud */
+}
+
+.landing-page h1 {
+    font-size: 2.5rem; 
+    /* Lettergrootte van de hoofdtitel */
+    margin-bottom: 20px; 
+    /* Ruimte onder de hoofdtitel */
+}
+
+.landing-page p {
+    font-size: 1.2rem; 
+    /* Lettergrootte van de paragraaftekst */
+    margin-bottom: 30px; 
+    /* Ruimte onder de paragraaf */
+}
+
+/* Actie knop */
+.action-btn {
+    background-color: #28a745; 
+    /* Achtergrondkleur van de knop */
+    color: white; 
+    /* Tekstkleur van de knop */
+    padding: 12px 30px; 
+    /* Binnenruimte in de knop */
+    font-size: 1.2rem; 
+    /* Lettergrootte van de knoptekst */
+    text-decoration: none; 
+    /* Verwijdert onderstreping van links in de knop */
+    border-radius: 5px; 
+    /* Maakt de hoeken van de knop afgerond */
+}
+
+.action-btn:hover {
+    background-color: #218838; 
+    /* Verandert de achtergrondkleur bij hover */
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid; 
+    /* Past grid-layout toe op de container */
+    grid-template-columns: repeat(5, 1fr); 
+    /* Definieert 5 kolommen van gelijke breedte */
+    gap: 20px; 
+    /* Ruimte tussen de grid-items */
+    padding: 20px; 
+    /* Binnenruimte rondom de grid */
+    text-align: center; 
+    /* Centreert de tekst in de grid-items */
+    background-color: rgba(255, 255, 255, 0); 
+    /* Achtergrondkleur van de gridcontainer (doorzichtig) */
+    border-radius: 10px; 
+    /* Maakt de hoeken van de gridcontainer afgerond */
+}
+
+/* Grid Items */
+.grid-item img {
+    width: 150px; 
+    /* Breedte van de afbeeldingen */
+    height: 150px; 
+    /* Hoogte van de afbeeldingen */
+    object-fit: cover; 
+    /* Zorgt ervoor dat de afbeelding volledig in de container past */
+    border-radius: 8px; 
+    /* Maakt de hoeken van de afbeeldingen afgerond */
+    border: 1px solid #ccc; 
+    /* Geeft een grijze rand om de afbeeldingen */
+}
+
+.grid-item p {
+    margin-top: 10px; 
+    /* Ruimte boven de tekst */
+    font-size: 14px; 
+    /* Lettergrootte van de tekst */
+    color: #333; 
+    /* Tekstkleur */
+}
+
+/* Carrier Sections */
+.carrier {
+    margin-bottom: 40px; 
+    /* Ruimte onder de sectie */
+}
+
+.carrier header {
+    position: relative; 
+    /* Positioneert de header relatief ten opzichte van zichzelf */
+    overflow: hidden; 
+    /* Verbergt inhoud buiten de container */
+    transition: transform 0.3s ease-in-out; 
+    /* Voegt een soepele overgang toe */
+    color: white; 
+    /* Tekstkleur in de header */
+    text-align: center; 
+    /* Centreert de tekst in de header */
+    padding: 150px 20px; 
+    /* Binnenruimte in de header */
+    background-size: cover; 
+    /* Zorgt ervoor dat de achtergrondafbeelding de hele container vult */
+    background-position: center; 
+    /* Positioneert de achtergrondafbeelding in het midden */
+}
+
+.carrier header:hover {
+    transform: scale(1.05); 
+    /* Vergroot de header bij hover */
+}
+
+.carrier header a {
+    position: absolute; 
+    /* Positioneert de link absoluut in de header */
+    top: 0; 
+    /* Plaatst de link bovenaan */
+    left: 0; 
+    /* Plaatst de link links */
+    width: 100%; 
+    /* Zorgt ervoor dat de link de volledige breedte van de header beslaat */
+    height: 100%; 
+    /* Zorgt ervoor dat de link de volledige hoogte van de header beslaat */
+    display: block; 
+    /* Maakt de link een blokelement */
+    text-decoration: none; 
+    /* Verwijdert onderstreping van de link */
+}
+
+.carrier div {
+    padding: 20px; 
+    /* Binnenruimte in de container */
+    text-align: left;  
+    /* Lijnt de tekst links uit */
+    background-color: white; 
+    /* Achtergrondkleur van de container */
+    border-radius: 8px; 
+    /* Maakt de hoeken afgerond */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    /* Voegt een lichte schaduw toe */
+}
+
+/* Contact Page Styling */
+.contact-page {
+    text-align: center; 
+    /* Centreert de inhoud van de contactpagina */
+    padding: 50px; 
+    /* Binnenruimte rondom de inhoud */
+    background-color: #fff; 
+    /* Achtergrondkleur van de contactpagina */
+    border-radius: 10px; 
+    /* Maakt de hoeken afgerond */
+    margin: 80px auto 20px auto; 
+    /* Centreert de pagina en voegt marges toe */
+    max-width: 800px; 
+    /* Maximaal toegestane breedte van de pagina */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    /* Voegt een schaduw toe */
+    position: relative; 
+    /* Maakt positionering mogelijk */
+    z-index: 1; 
+    /* Zorgt ervoor dat de pagina bovenaan blijft */
+}
+
+/* Title Styling */
+.contact-page h1 {
+    font-size: 2.5rem; 
+    /* Lettergrootte van de titel */
+    margin-bottom: 20px; 
+    /* Ruimte onder de titel */
+    color: #003366; 
+    /* Kleur van de titeltekst */
+    font-weight: 600; 
+    /* Maak de tekst dikker */
+}
+
+/* Paragraph Styling */
+.contact-page p { 
+    font-size: 1.2rem; 
+    /* Stelt de lettergrootte in voor de paragraaf op 1.2rem */
+    margin-bottom: 30px; 
+    /* Voegt een marge van 30px toe aan de onderkant van de paragraaf */
+    color: #333; 
+    /* Zet de tekstkleur naar donkergrijs (#333) */
+}
+
+/* Form Styling */
+.contact-page form {
+    display: flex; 
+    /* Gebruik flexbox voor het formulier */
+    flex-direction: column; 
+    /* Plaatst de velden onder elkaar */
+    align-items: center; 
+    /* Centreert de velden horizontaal */
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%; 
+    /* Breedte van de invoervelden */
+    padding: 15px; 
+    /* Binnenruimte in de velden */
+    margin-bottom: 15px; 
+    /* Ruimte onder de velden */
+    border-radius: 5px;  
+    /* Maakt de hoeken afgerond */
+    border: 1px solid #ccc; 
+    /* Grijze rand om de velden */
+    font-size: 1rem; 
+    /* Lettergrootte van de inhoud */
+    box-sizing: border-box; 
+    /* Inclusief padding en borders in de breedte */
+    transition: all 0.3s ease; 
+    /* Voegt een overgang toe bij focus */
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+    border-color: #003366; 
+    /* Verandert de randkleur naar donkerblauw (#003366) wanneer het in focus is */
+    outline: none; 
+    /* Verwijdert de standaard blauwe focus-outline van het element */
+    box-shadow: 0 0 5px rgba(0, 51, 102, 0.5); 
+    /* Voegt een schaduw toe rondom het element in focus voor visuele nadruk */
+}
+
+.contact-page button {
+    background-color: #28a745; 
+    /* Zet de achtergrondkleur van de knop naar groen (#28a745) */
+    color: #fff; 
+    /* Zet de tekstkleur naar wit */
+    font-size: 1.1rem; 
+    /* Zet de lettergrootte van de knop naar 1.1rem */
+    padding: 15px 30px; 
+    /* Voegt binnenruimte toe rondom de tekst van de knop */
+    border: none; 
+    /* Verwijdert de rand van de knop */
+    border-radius: 5px; 
+    /* Maakt de hoeken van de knop afgerond */
+    cursor: pointer; 
+    /* Verandert de cursor naar een pointer wanneer je over de knop beweegt */
+    transition: background-color 0.3s ease; 
+    /* Voegt een overgangseffect toe voor de achtergrondkleur van de knop */
+}
+
+.contact-page button:hover {
+    background-color: #218838; 
+    /* Verandert de achtergrondkleur naar een donkerder groen (#218838) wanneer je over de knop beweegt */
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 1200px; 
+    /* Stelt de maximale breedte in van de wrapper op 1200px */
+    margin: 20px auto; 
+    /* Voegt marge toe van 20px boven en onder en centreert de wrapper horizontaal */
+    padding: 20px; 
+    /* Voegt binnenruimte toe rond de inhoud van de wrapper */
+    background-color: #fff; 
+    /* Zet de achtergrondkleur naar wit */
+    border-radius: 10px; 
+    /* Maakt de hoeken van de wrapper rond */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    /* Voegt een lichte schaduw toe rond de wrapper voor diepte */
+}
+
+/* About Me Page Styling */
+.about-me-page h1, .about-me-page h2 {
+    color: #003366; 
+    /* Zet de kleur van de titels naar donkerblauw (#003366) */
+}
+
+.about-me-page p {
+    font-size: 1.1rem; 
+    /* Zet de lettergrootte van de paragraaf op 1.1rem */
+    line-height: 1.6; 
+    /* Verhoogt de regelhoogte voor meer ruimte tussen regels */
+    margin-bottom: 20px; 
+    /* Voegt marge van 20px toe aan de onderkant van de paragraaf */
+}
+
+/* Algemene styling voor de resultatenpagina */
+.result-page {
+    background-color: #ffffff; 
+    /* Zet de achtergrondkleur van de resultatenpagina op wit */
+    padding: 30px; 
+    /* Voegt binnenruimte toe rondom de inhoud */
+    max-width: 600px; 
+    /* Beperkt de maximale breedte van de resultatenpagina tot 600px */
+    margin: 50px auto; 
+    /* Zorgt voor verticale marge van 50px en centreert horizontaal */
+    border-radius: 8px; 
+    /* Maakt de hoeken van de container afgerond */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    /* Voegt een schaduw toe rondom de container */
+}
+
+.result-page h1 {
+    text-align: center; 
+    /* Centreert de titel horizontaal */
+    color: #003366; 
+    /* Kleur van de tekst (donkerblauw) */
+    margin-bottom: 20px; 
+    /* Voegt ruimte toe onder de titel */
+}
+
+.result-group {
+    margin-bottom: 20px; 
+    /* Voegt verticale ruimte toe tussen groepen */
+}
+
+.result-group h3 {
+    font-size: 1.2em; 
+    /* Stelt de lettergrootte in voor de subtitels */
+    color: #003366; 
+    /* Kleur van de subtiteltekst (donkerblauw) */
+    margin-bottom: 10px; 
+    /* Voegt ruimte toe onder de subtitels */
+}
+
+.result-group p {
+    font-size: 1em; 
+    /* Stelt de lettergrootte in voor de paragraaftekst */
+    color: #333333;
+    /* Kleur van de paragraaftekst (donkergrijs) */
+} 
+
+.action-btn {
+    display: block; 
+    /* Zorgt ervoor dat de knop zich als een blok gedraagt */
+    width: 100%; 
+    /* Maakt de knop zo breed als de container */
+    padding: 12px 0; 
+    /* Voegt binnenruimte toe aan de boven- en onderkant */
+    font-size: 1.1em; 
+    /* Stelt de lettergrootte in van de knoptekst */
+    color: white; 
+    /* Maakt de knoptekst wit */
+    background-color: #28a745; 
+    /* Zet de achtergrondkleur van de knop op groen */
+    border: none; 
+    /* Verwijdert eventuele standaardinstellingen van de knop */
+    border-radius: 4px; 
+    /* Maakt de hoeken van de knop afgerond */
+    text-align: center; 
+    /* Centreert de knoptekst horizontaal */
+    cursor: pointer; 
+    /* Verandert de cursor in een handje bij hover */
+    text-decoration: none; 
+    /* Verwijdert de onderstreping van links */
+}
+
+.action-btn:hover {
+    background-color: #218838; 
+    /* Verandert de achtergrondkleur van de knop bij hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center; 
+    /* Centreert de tekst in de footer */
+    padding: 10px 0; 
+    /* Binnenruimte in de footer */
+    background-color: #f1f1f1; 
+    /* Achtergrondkleur van de footer */
+    font-size: 14px; 
+    /* Lettergrootte van de footertekst */
+    color: #333; 
+    /* Tekstkleur in de footer */
+    position: fixed; 
+    /* Zorgt ervoor dat de footer onderaan blijft */
+    bottom: 0; 
+    /* Plaatst de footer onderaan de pagina */
+    width: 100%; 
+    /* Laat de footer de volledige breedte over gaanS */
+}

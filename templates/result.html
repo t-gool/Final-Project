@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="nl"> 
+<head>
+    <title>Transport Vergelijker - Resultaten</title> 
+    <!-- De titel van de pagina -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+   <!-- Link naar mijn css bestand voor de opmaak van de pagina  -->
+    <style>
+        /* CSS voor ruimte tussen de knoppen */
+        .action-buttons {
+            display: flex; 
+            /* Zorgt ervoor dat de knoppen naast elkaar staan */
+            gap: 20px; 
+            /* Ruimte tussen de knoppen */
+            margin-top: 20px; 
+            /* Extra marge boven de knoppen */
+        }
+
+        .action-btn {
+            text-decoration: none; 
+            /* Verwijdert onderstreping van klikbare links */
+            padding: 10px 20px; 
+            /* Binnenruimte van de knop */
+            background-color: #28a745; 
+            /* Achtergrondkleur van de knop */
+            color: white; 
+            /* Tekstkleur van de knop */
+            border-radius: 5px; 
+            /* Maakt de hoeken van de knop afgerond */
+            text-align: center; 
+            /* Centreert de tekst in de knop */
+        }
+
+        .action-btn:hover {
+            background-color: #218838; 
+            /* Verander de achtergrondkleur als je over de knop gaat met je muis */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigatiebalk -->
+<nav>
+    <ul>
+       <!-- Link naar de startpagina -->
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <!-- Link naar de pagina met een overzicht van vervoerders -->
+        <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+        <!-- Link naar de inlogpagina -->
+        <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+        <!-- Link naar de pagina met informatie over de website -->
+        <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+        <!-- Link naar de contactpagina -->
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Resultatenpagina -->
+<div class="result-page">
+    <!-- Container voor de inhoud van de resultatenpagina -->
+    <h1>Uw ingevoerde gegevens</h1> 
+    <!-- Titel van de resultatenpagina -->
+
+    <div class="result-group">
+        <!-- Groep voor de pakketgegevens -->
+        <h3>Gegevens van het pakket</h3> 
+        <!-- Titel voor de pakketgegevens -->
+        <p><strong>Gewicht:</strong> {{ weight }} KG</p> 
+        <!-- Toont het gewicht van het pakket -->
+        <p><strong>Afmetingen:</strong> {{ length }} cm (Lengte) x {{ width }} cm (Breedte) x {{ height }} cm (Hoogte)</p> 
+        <!-- Toont de afmetingen van het pakket -->
+    </div>
+
+    <div class="result-group">
+        <!-- Groep voor palletinformatie -->
+        <h3>Palletinformatie</h3> 
+        <!-- Titel voor palletinformatie -->
+        <p><strong>Moet het pakket op een pallet?:</strong> {{ 'Ja' if on_pallet == 'ja' else 'Nee' }}</p> 
+        <!-- Laat zien of het pakket op een pallet moet -->
+    </div>
+
+    <div class="result-group">
+        <!-- Groep voor leveringstype -->
+        <h3>Leveringstype</h3> 
+        <!-- Titel voor leveringstype -->
+        <p><strong>Type levering:</strong> {{ delivery_type }}</p> 
+        <!-- Laat het type levering zien -->
+    </div>
+
+    <div class="result-group">
+        <!-- Groep voor Track & Trace informatie -->
+        <h3>Track & Trace</h3> 
+        <!-- Titel voor Track & Trace informatie -->
+        <p><strong>Track & Trace:</strong> {{ 'Ja' if track_trace == 'ja' else 'Nee' }}</p> 
+        <!-- Laat zien of Track & Trace beschikbaar is -->
+    </div>
+
+    <!-- Actieknoppen -->
+    <div class="action-buttons">
+        <!-- Container voor de actieknoppen -->
+        <a href="/vragen" class="action-btn">Terug naar formulier</a> 
+        <!-- Knop naar het formulier -->
+
+        <a href="{{ url_for('comparison', weight=weight, length=length, width=width, height=height, on_pallet=on_pallet, delivery_type=delivery_type, track_trace=track_trace) }}" 
+           class="action-btn">Ga naar vergelijking</a> 
+        <!-- Knop naar de vergelijking -->
+    </div>
+</div>
+
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p> 
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>

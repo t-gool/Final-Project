@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Transport Vergelijker - Formulier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Link naar mijn css bestand voor de opmaak van de pagina  -->
+    <style>
+        /* ===== Navigatiebalk ===== */
+        /* Stijlen voor de navigatiebalk */
+        nav {
+            background-color: #003366; 
+            /* Donkerblauwe achtergrondkleur */
+            color: white; 
+            /* Witte tekstkleur */
+            padding: 10px 0; 
+            /* Ruimte boven en onder de tekst */
+            text-align: center; 
+            /* Tekst in het midden van de pagina */
+            box-sizing: border-box; 
+            /* Inclusief padding in de totale breedte */
+        }
+
+        /* De navigatielijst */
+        nav ul {
+            list-style: none; 
+            /* Geen opsommingstekens */
+            padding: 0; 
+            /* Geen extra binnenruimte */
+            margin: 0; 
+            /* Geen extra buitenruimte */
+        }
+
+        /* Navigatie-koppen horizontaal weergeven */
+        nav ul li {
+            display: inline; 
+            /* Elk item naast elkaar */
+            margin: 0 20px; 
+            /* Ruimte tussen de navigatie koppen */
+        }
+
+        /* Stijlen voor navigatielinks */
+        nav ul li a {
+            color: white; 
+            /* Witte tekstkleur */
+            text-decoration: none; 
+            /* Geen onderstreping */
+            font-size: 1.2em; 
+            /* Grotere tekst */
+        }
+
+        /* Onderstreping toevoegen bij hover */
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Formulier styling  */
+        /* Pagina waarin het formulier gecentreerd wordt */
+        .question-page {
+            background-color: #f9f9f9; 
+            /* Lichtgrijze achtergrond */
+            padding: 20px; 
+            /* Binnenruimte */
+            display: flex; 
+            /* Flex om inhoud te centreren */
+            justify-content: center; 
+            /* Horizontaal gecentreerd */
+        }
+
+        /* Container voor het formulier */
+        .form-container {
+            background-color: #ffffff; 
+            /* Witte achtergrond */
+            border-radius: 8px; 
+            /* Afgeronde hoeken */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            /* Schaduw voor diepte */
+            padding: 20px 30px; 
+            /* Binnenruimte */
+            max-width: 600px; 
+            /* Maximale breedte van het formulier */
+            width: 100%; 
+            /* Breedte aanpassen aan scherm */
+        }
+
+        /* Titel van het formulier */
+        .form-container h1 {
+            font-size: 1.5em; 
+            /* Tekstgrootte */
+            margin-bottom: 20px; 
+            /* Ruimte onder de titel */
+            text-align: center; 
+            /* Titel gecentreerd */
+            color: #003366; 
+            /* Donkerblauwe kleur */
+        }
+
+        /* Styling voor vraaggroepen */
+        .form-group {
+            margin-bottom: 30px; 
+            /* Ruimte tussen groepen */
+        }
+
+        .form-group label {
+            display: block; 
+            /* Label op een eigen regel */
+            margin-bottom: 5px; 
+            /* Ruimte onder de label */
+            font-size: 1em; 
+            /* Tekstgrootte */
+            color: #333333; 
+            /* Donkergrijze kleur */
+        }
+
+        /* Styling voor radio-knoppen */
+        .radio-options {
+            display: flex; 
+            /* Flexbox voor verticale weergave */
+            flex-direction: column; 
+            /* Opties onder elkaar */
+            align-items: flex-start; 
+            /* Links moeten op dezelfde hoogte zijn */
+        }
+
+        /* Styling voor radiobuttons */
+        .form-group input[type="radio"] {
+            margin-right: 10px; 
+            /* Ruimte tussen knop en label */
+        }
+
+        /* Vraagnummer opmaak */
+        .question-number {
+            font-weight: bold; 
+            /* dikgedrukte tekst */
+            font-size: 1.2em; 
+            /* Grotere tekst */
+            color: #003366; 
+            /* Donkerblauwe kleur */
+            margin-bottom: 10px; 
+            /* Ruimte onder het nummer */
+        }
+
+        /* Verzendknop */
+        .action-btn {
+            display: block; 
+            /* Knop vult de hele breedte van het formulier */
+            width: 100%;
+            padding: 12px 0; 
+            /* Hoogte van de knop */
+            font-size: 1.1em; 
+            /* Tekstgrootte */
+            color: #ffffff; 
+            /* Witte tekst */
+            background-color: #28a745; 
+            /* Groene achtergrond */
+            border: none; 
+            /* Geen rand */
+            border-radius: 4px; 
+            /* Afgeronde hoeken */
+            text-align: center; 
+            /* Tekst gecentreerd */
+            cursor: pointer; 
+            /* Cursor verandert naar handje wanneer die op de verzendknop staat */
+            text-decoration: none; 
+            /* Geen onderstreping */
+        }
+
+        /* Hover effect voor verzendknop */
+        .action-btn:hover {
+            background-color: #218838; 
+            /* Donkerdere groene kleur wanneer de muis erop hovert */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigatiebalk -->
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--  Vraagpagina  -->
+    <!-- De sectie voor het formulier waar de gebruiker zijn transportgegevens invoert -->
+    <div class="question-page">
+        <div class="form-container">
+            <h1>Transport Vergelijker</h1>
+            <form action="{{ url_for('vragen') }}" method="POST">
+                
+                <!--  Vraag 1: Gewicht  -->
+                <!-- Vraag naar het gewicht van het pakket -->
+                <div class="form-group">
+                    <div class="question-number">Vraag 1:</div>
+                    <p>Wat is het gewicht van uw pakket?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="weight" value="0-5" required> 0 tot 5 KG
+                        </label>
+                        <label>
+                            <input type="radio" name="weight" value="5-10" required> 5 tot 10 KG
+                        </label>
+                        <label>
+                            <input type="radio" name="weight" value="10+" required> 10 KG en hoger
+                        </label>
+                    </div>
+                </div>
+
+                <!--  Vraag 2: Afmetingen  -->
+                <!-- Vraag naar de afmetingen van het pakket -->
+                <div class="form-group">
+                    <div class="question-number">Vraag 2:</div>
+                    <p>Hoe lang is uw pakket?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="length" value="0-5" required> 0 tot 5 CM
+                        </label>
+                        <label>
+                            <input type="radio" name="length" value="5-10" required> 5 tot 10 CM
+                        </label>
+                        <label>
+                            <input type="radio" name="length" value="10+" required> 10 CM en hoger
+                        </label>
+                    </div>
+
+                    <p>Hoe breed is uw pakket?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="width" value="0-5" required> 0 tot 5 CM
+                        </label>
+                        <label>
+                            <input type="radio" name="width" value="5-10" required> 5 tot 10 CM
+                        </label>
+                        <label>
+                            <input type="radio" name="width" value="10+" required> 10 CM en hoger
+                        </label>
+                    </div>
+
+                    <p>Hoe hoog is uw pakket?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="height" value="0-5" required> 0 tot 5 CM
+                        </label>
+                        <label>
+                            <input type="radio" name="height" value="5-10" required> 5 tot 10 CM
+                        </label>
+                        <label>
+                            <input type="radio" name="height" value="10+" required> 10 CM en hoger
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Vraag 3: Pallet -->
+                <!-- Vraag of het pakket op een pallet moet -->
+                <div class="form-group">
+                    <div class="question-number">Vraag 3:</div>
+                    <p>Moet uw pakket op een pallet?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="on_pallet" value="ja" required> Ja
+                        </label>
+                        <label>
+                            <input type="radio" name="on_pallet" value="nee" required> Nee
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Vraag 4: Levering -->
+                <!-- Vraag naar de levering: nationaal of internationaal (europa) of internationaal (buiten europa)-->
+                <div class="form-group">
+                    <div class="question-number">Vraag 4:</div>
+                    <p>Moet uw pakket nationaal of internationaal vervoerd worden?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="delivery_type" value="nationaal" required> Nationaal
+                        </label>
+                        <label>
+                            <input type="radio" name="delivery_type" value="internationaal_europa" required> Internationaal (Europa)
+                        </label>
+                        <label>
+                            <input type="radio" name="delivery_type" value="internationaal_buiten_europa" required> Internationaal (Buiten Europa)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Vraag 5: Track & Trace -->
+                <!-- Vraag of er een track & trace code gewenst is -->
+                <div class="form-group">
+                    <div class="question-number">Vraag 5:</div>
+                    <p>Wilt u een track of tracecode bij uw verzending?</p>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="track_trace" value="ja" required> Ja
+                        </label>
+                        <label>
+                            <input type="radio" name="track_trace" value="nee" required> Nee
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Verzendknop -->
+                <button type="submit" class="action-btn">Bekijk Resultaten</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Vervoerders Overzicht</title>
+    <!-- Titel die in de browser-tab wordt weergegeven -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Link naar mijn css bestand voor de opmaak van de pagina  -->
+</head>
+
+<body>
+    <!-- Navigatiebalk -->
+    <nav>
+        <ul>
+           <!-- Link naar de startpagina -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Link naar de pagina met een overzicht van vervoerders -->
+            <li><a href="{{ url_for('overview') }}">Overzicht Vervoerders</a></li>
+            <!-- Link naar de inlogpagina -->
+            <li><a href="{{ url_for('inloggen') }}">Inloggen</a></li>
+            <!-- Link naar de pagina met informatie over de website -->
+            <li><a href="{{ url_for('about') }}">Over Mij</a></li>
+            <!-- Link naar de contactpagina -->
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Sectie -->
+    <header class="carrier-header" style="background: #f5f5f5; text-align: center; padding: 50px 20px;">
+        <!-- Headersectie met een grijze achtergrond en gecentreerde tekst -->
+        <h1>Overzicht van Vervoerders</h1>
+        <!-- Hoofdtitel van de pagina -->
+        <h2>
+            Hieronder zijn alle vervoerders en uitleg over deze vervoerders te zien die in de vergelijking meegenomen worden. Mocht u naar desbetreffende vervoerderswebsite willen gaan kunt u op het logo klikken van de vervoerder.
+        </h2>
+        <!-- Beschrijving van de inhoud van de pagina -->
+    </header>
+
+    <!-- Sectie met vervoerders -->
+    <div class="carrier-sections" style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+        <!-- Container met alle vervoerders met een vaste breedte en centrale uitlijning -->
+
+        <!-- DHL -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor DHL -->
+            <a href="https://www.dhl.com" target="_blank">
+                <!-- Klikbare link naar de website van DHL -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/dhl-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor DHL -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van DHL -->
+                <p>
+                    DHL en Deutsche Post vormen het grootste post- en logistiekbedrijf ter wereld. Samen heten we de DHL Group. Ons portfolio van logistieke oplossingen via de weg, de lucht en het spoor is ongeëvenaard. Met 'n half miljoen medewerkers in meer dan 220 landen en regio’s, brengen we alle hoeken van de planeet moeiteloos in verbinding.
+                </p>
+            </div>
+        </section>
+
+        <!-- POSTNL -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor PostNL -->
+            <a href="https://www.postnl.nl" target="_blank">
+                <!-- Klikbare link naar de website van PostNL -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/postnl-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor PostNL -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van PostNL -->
+                <p>
+                    PostNL biedt post- en pakketbezorging in Nederland en heeft uitgebreide bezorgopties voor consumenten en bedrijven.
+                </p>
+            </div>
+        </section>
+
+        <!-- DPD -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor DPD -->
+            <a href="https://www.dpd.com" target="_blank">
+                <!-- Klikbare link naar de website van DPD -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/dpd-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor DPD -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van DPD -->
+                <p>
+                    DPD is een internationaal pakketbezorgingsbedrijf dat snelle en betrouwbare diensten aanbiedt binnen Europa en daarbuiten.
+                </p>
+            </div>
+        </section>
+
+        <!-- GLS -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor GLS -->
+            <a href="https://www.gls-group.eu" target="_blank">
+                <!-- Klikbare link naar de website van GLS -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/gls-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor GLS -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van GLS -->
+                <p>
+                    GLS biedt pakket- en expresdiensten in Europa met een focus op snelheid en betrouwbaarheid.
+                </p>
+            </div>
+        </section>
+
+        <!-- UPS -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor UPS -->
+            <a href="https://www.ups.com" target="_blank">
+                <!-- Klikbare link naar de website van UPS -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/ups-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor UPS -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van UPS -->
+                <p>
+                    UPS is een wereldwijde leider in logistieke diensten, inclusief pakketbezorging en supply chain-oplossingen.
+                </p>
+            </div>
+        </section>
+
+        <!-- FedEx -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor FedEx -->
+            <a href="https://www.fedex.com" target="_blank">
+                <!-- Klikbare link naar de website van FedEx -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/fedex-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor FedEx -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van FedEx -->
+                <p>
+                    FedEx biedt internationale koeriersdiensten, vrachtvervoer en logistieke oplossingen.
+                </p>
+            </div>
+        </section>
+
+        <!-- DB Schenker -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor DB Schenker -->
+            <a href="https://www.dbschenker.com" target="_blank">
+                <!-- Klikbare link naar de website van DB Schenker -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/schenker-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor DB Schenker -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van DB Schenker -->
+                <p>
+                    DB Schenker is een toonaangevend logistiek bedrijf dat gespecialiseerd is in land-, lucht- en zeevracht en supply chain-beheer.
+                </p>
+            </div>
+        </section>
+
+        <!-- Kuehne + Nagel -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor Kuehne + Nagel -->
+            <a href="https://www.kuehne-nagel.com" target="_blank">
+                <!-- Klikbare link naar de website van Kuehne + Nagel -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/kuehne-nagel-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor Kuehne + Nagel -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van Kuehne + Nagel -->
+                <p>
+                    Kuehne + Nagel biedt wereldwijde logistieke oplossingen, waaronder zee- en luchtvracht, contractlogistiek en meer.
+                </p>
+            </div>
+        </section>
+
+        <!-- Rhenus -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor Rhenus -->
+            <a href="https://www.rhenus.group" target="_blank">
+                <!-- Klikbare link naar de website van Rhenus -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/rhenus-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor Rhenus -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van Rhenus -->
+                <p>
+                    Rhenus is een logistieke dienstverlener die zich richt op transport, opslag en geavanceerde logistieke oplossingen.
+                </p>
+            </div>
+        </section>
+
+        <!-- Bakker Groep -->
+        <section class="carrier" style="margin-bottom: 40px;">
+            <!-- Sectie voor Bakker Groep -->
+            <a href="https://www.bakker-transport-warehousing.nl/" target="_blank">
+                <!-- Klikbare link naar de website van Bakker Groep -->
+                <header style="background: url('{{ url_for('static', filename='Pictures/bakker-background.jpg') }}') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px;">
+                    <!-- Header met achtergrondafbeelding voor Bakker Groep -->
+                    <h2></h2>
+                </header>
+            </a>
+            <div style="padding: 20px;">
+                <!-- Tekstblok met beschrijving van Bakker Groep -->
+                <p>
+                    Bakker Groep is gespecialiseerd in transport en warehousing, met een focus op efficiëntie en klanttevredenheid.
+                </p>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+<footer>
+    <p>&copy; 2025 Transporteur Vergelijker</p>
+    <!-- Voegt een copyright-melding toe aan de onderkant van de pagina -->
+</footer>
+
+</html>
